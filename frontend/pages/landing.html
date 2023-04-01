@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/tailwind.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/colorPallete.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>UniHub</title>
+    <script>
+      function toggleDropdown(id, closeIds) {
+        document.getElementById(id).classList.toggle("hidden");
+        if (closeIds) {
+          closeIds.forEach((closeId) => {
+            if (closeId !== id) {
+              document.getElementById(closeId).classList.add("hidden");
+            }
+          });
+        }
+      }
+    </script>
+  </head>
+  <body>
+    
+
+    <div id="navbar"></div>
+
+
+    <!-- Add the following line to include the Font Awesome library for the search icon -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      integrity="sha384-sMA1tB7t+2e4DV1T2S//XsEsa0H7I0wxz4q3P4u8z4Kj7d12yf+1Y7JXKJ+eOAT/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/631e0856b2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function(){
+          $("#navbar").load("nav-bar.html");
+      });
+    </script>
+  </body>
+</html>

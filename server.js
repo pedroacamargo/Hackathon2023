@@ -1,9 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
+const path = require("path");
 
 const app = express();
 
+app.use('/static', express.static(path.resolve("frontend")));
 app.use(cors());
 
 // parse requests of content-type - application/json
@@ -24,7 +26,7 @@ app.use(
 // database
 const db = require("./app/models");
 const Role = db.role;
-
+`""" `
 db.sequelize.sync();
 // force: true will drop the table if it already exists
 // db.sequelize.sync({force: true}).then(() => {
@@ -34,7 +36,8 @@ db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.sendFile(path.resolve("frontend", "pages", "login.html"));
+  // res.json({ message: "Welcome to bezkoder application." });
 });
 
 // routes
