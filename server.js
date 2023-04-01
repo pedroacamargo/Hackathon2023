@@ -6,6 +6,7 @@ const path = require("path");
 const app = express();
 
 app.use('/static', express.static(path.resolve("frontend")));
+
 app.use(cors());
 
 // parse requests of content-type - application/json

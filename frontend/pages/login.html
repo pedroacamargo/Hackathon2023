@@ -20,13 +20,17 @@
         <div class="login md:w-96 w-80 h-96 bg1 border-2 border-stone-800 rounded-lg absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col text-white p-5">
             <h2 class="text-3xl my-2">Welcome</h2>
 
-            <form action="" class="relative flex justify-center items-center flex-col">
+            <form method="post" action="/api/auth/signin" class="relative flex justify-center items-center flex-col">
                 <div class="flex my-3 relative">
-                    <input type="text" id="username" placeholder="Username" class="rounded p-1 text-black" autocomplete="false">
+                    <input type="text" name="username" placeholder="Username" class="rounded p-1 text-black" autocomplete="false">
                     <div class="w-7 h-8 absolute right-0 bg1 flex items-center justify-center"><i class="fa-solid fa-user"></i></div>
                 </div>
                 <div class="flex my-3 relative">
-                    <input type="password" id="password" placeholder="Password" class="rounded p-1 text-black" autocomplete="false">
+                    <input type="text" name="email" placeholder="Email" class="rounded p-1 text-black" autocomplete="false">
+                    <div class="w-7 h-8 absolute right-0 bg1 flex items-center justify-center"><i class="fa-solid fa-user"></i></div>
+                </div>
+                <div class="flex my-3 relative">
+                    <input type="password" name="password" placeholder="Password" class="rounded p-1 text-black" autocomplete="false">
                     <div class="w-7 h-8 absolute right-0 bg1 flex items-center justify-center"><i class="fa-solid fa-lock"></i></div>
                 </div>
                 <div class="remember w-60 md:left-3">
