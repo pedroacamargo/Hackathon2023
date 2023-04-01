@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <input type="text" id="comment-box" placeholder="Enter comment">
+<button id="post" onclick="addComment()">Post</button>
+<ul id="unordered">
+</ul>
+
+<script>
+    function addComment() {
+        var comment = document.getElementById("comment-box").value;
+        var list = document.getElementById("unordered");
+        var item = document.createElement("li");
+        item.appendChild(document.createTextNode(comment));
+        var replyButton = document.createElement("button");
+        replyButton.appendChild(document.createTextNode("Reply"));
+        var replyList = document.createElement("ul");
+        replyList.style.display = "none";
+        var replyBox = document.createElement("input");
+        replyBox.type = "text";
+        replyBox.placeholder = "Enter reply";
+        var replyPost = document.createElement("button");
+        replyPost.appendChild(document.createTextNode("Post"));
+        replyPost.onclick = function() {
+            var reply = replyBox.value;
+            var replyItem = document.createElement("li");
+            replyItem.appendChild(document.createTextNode(reply));
+            replyList.appendChild(replyItem);
+            replyBox.value = "";
+        };
+        item.appendChild(replyButton);
+        item.appendChild(replyList);
+        item.appendChild(replyBox);
+        item.appendChild(replyPost);
+        list.appendChild(item);
+        document.getElementById("comment-box").value = "";
+    }
+    function toggleReplies(replyList) {
+        if (replyList.style.display === "none") {
+            replyList.style.display = "block";
+        } else {
+            replyList.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
