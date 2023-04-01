@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/tailwind.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/colorPallete.css">
+    <link rel="stylesheet" href="/static/styles/tailwind.css">
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="/static/styles/colorPallete.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>UniHub</title>
     <script>
@@ -32,14 +32,58 @@
         <div class="sidebar w-96 md:block hidden h-screen bg1">
 
         </div>
-        <div class="w-full md:1/2 h-screen bg1 flex flex-col items-center justify-start">
-          <div class="feed-container flex flex-row justify-center text-white w-3/5">
+        <div class="w-full mb-5 md:1/2 h-screen bg1 flex flex-col items-center justify-start">
+          <div class="feed-container flex flex-row justify-center text-white w-3/5" style="width: 75%;">
             <span class="feed-nav bg3 mx-4 hover:bg-white hover:text-black feed-active p-3">Following/Stored</span>
             <span class="feed-nav bg3 mx-4 hover:bg-white hover:text-black p-3">Your Degree</span>
             <span class="feed-nav bg3 mx-4 hover:bg-white hover:text-black p-3">Your University</span>
             <span class="feed-nav bg3 mx-4 hover:bg-white hover:text-black p-3">For You</span>
           </div>
+          <div class="feed w-3/5 pb-5" style="border-bottom: 1px solid rgba(255, 255, 255, 0.062);">
+  
+            <!--
+                rating classes:
+                  => top
+                  => spam
+                
+                action names:
+                  => Post
+                  => Comment
+                  => Share
+            -->
+
+
+            <!-- post action -->
+            <div class="post-title flex flex-row justify-start items-center w-full">
+              <img class="rounded-full w-10 h-10" src="../../test/imgs/Screenshot_20230316_114327.png" alt="profile pic">  <!-- id:action can be comment, post, etc -->
+              <p class="italic cursor-pointer mx-2 text-white"><span name="username" style="color: yellow;">Tuai-offline</span>'s <span id="action" class="text-white">post</span> got <span id="rating" class="top">TOP</span> on <span id="post-name" class="font-bold">LA1-Semana5</span></p>
+            </div>
+  
+            <!-- post log -->
+            <div class="post-title w-full bg3 p-5 rounded flex flex-col items-start justify-start" style="border: 1px solid rgba(255, 255, 255, 0.288);">
+              <p class="text-white post-log flex items-center"><i class="fa-solid fa-arrow-up p-1 px-2 mr-2 rounded-full" style="color: #26a269; border: 1px solid green;"></i><span name="username" class="italic text-white font-bold pr-2">Tuai-offline </span> got <span id="upvotes" class="px-1 text-white" style="color: #26a269">23 upvotes</span></p>
+              <p class="text-white my-3 p-3" id="post-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime temporibus, inventore voluptatum quidem vero expedita non explicabo recusandae quas deserunt. Autem excepturi quibusdam perspiciatis maiores nostrum harum, praesentium architecto ipsum?</p>
+              <span class="text-white font-bold cursor-pointer hover:text-black">See more...</span>
+            </div>
+          </div>
+          <div class="feed w-3/5 pb-5" style="border-bottom: 1px solid rgba(255, 255, 255, 0.062);">
+
+            <!-- post action -->
+            <div class="post-title flex flex-row justify-start items-center w-full">
+              <img class="rounded-full w-10 h-10" src="../../test/imgs/Screenshot_20230316_114327.png" alt="profile pic">  <!-- id:action can be comment, post, etc -->
+              <p class="italic cursor-pointer mx-2 text-white"><span name="username" style="color: yellow;">Tuai-offline</span>'s <span id="action" class="text-white">post</span> got <span id="rating" class="top">TOP</span> on <span id="post-name" class="font-bold">LA1-Semana5</span></p>
+            </div>
+  
+            <!-- post log -->
+            <div class="post-title w-full bg3 p-5 rounded flex flex-col items-start justify-start" style="border: 1px solid rgba(255, 255, 255, 0.288);">
+              <p class="text-white post-log flex items-center"><i class="fa-solid fa-arrow-up p-1 px-2 mr-2 rounded-full" style="color: #26a269; border: 1px solid green;"></i><span name="username" class="italic text-white font-bold pr-2">Tuai-offline </span> got <span id="upvotes" class="px-1 text-white" style="color: #26a269">23 upvotes</span></p>
+              <p class="text-white my-3 p-3" id="post-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime temporibus, inventore voluptatum quidem vero expedita non explicabo recusandae quas deserunt. Autem excepturi quibusdam perspiciatis maiores nostrum harum, praesentium architecto ipsum?</p>
+              <span class="text-white font-bold cursor-pointer hover:text-black">See more...</span>
+            </div>
+          </div>
         </div>
+        
+
       </div>
     </div>
 
@@ -56,7 +100,7 @@
     ></script>
     <script>
       $(function(){
-          $("#navbar").load("nav-bar.html");
+          $("#navbar").load("/static/pages/nav-bar.html");
       });
     </script>
   </body>

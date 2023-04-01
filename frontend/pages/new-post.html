@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    // form to upload a message
+    <form action="/api/post/new" method="post" enctype="multipart/form-data">
+        <label for="file-input">Post message:</label>
+        <input type="text" name="message" placeholder="Message" />
+        <label for="file-input">Upload a file:</label>
+        <input type="file" id="file-input" name="file" />
+        <button type="submit">Post</button>
+    </form>
+
+    <!-- <form action="/upload" method="post" enctype="multipart/form-data">
+      <button type="submit">Upload</button>
+    </form> -->
+</body>
+</html>
