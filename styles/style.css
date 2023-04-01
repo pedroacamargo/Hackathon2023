@@ -1,13 +1,6 @@
 @charset "utf-8";
 
-:root {
-    --cor1: #0A0B0D;
-    --cor2: #2D3540;
-    --cor3: #1C2026;
-    --cor4: #A4A5A6;
-    --cor5: #465059;
-    --cor6: #D9D9D9;
-}
+@import url("colorPallete.css");
 
 .rectangle {
     position: absolute;
@@ -19,9 +12,18 @@
     background-color: var(--cor6);
 }
 
+.rec2 {
+    left: 1500px;
+    top: 100px;
+}
+
 @media screen and (max-width: 768px) {
     .rectangle {
         left: -800px;
+    }
+
+    .rec2 {
+        display: none;
     }
 
     

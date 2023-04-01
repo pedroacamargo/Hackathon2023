@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <title>Navbar</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+  <nav class="bg-gray-800 p-4">
+    <div class="container mx-auto">
+      <div class="flex justify-between items-center">
+        <!-- Left side -->
+        <div class="flex items-center space-x-4">
+          <!-- Logo -->
+          <a href="#" class="text-white font-bold">My Logo</a>
+          
+          <!-- Search bar -->
+          <input type="search" placeholder="Search..." class="rounded bg-white px-3 py-2 w-64 text-black focus:outline-none">
+          
+          <!-- Dropdowns -->
+          <div class="relative group">
+            <button class="text-white">My Space</button>
+            <div class="hidden absolute left-0 mt-2 bg-white shadow-lg text-black group-hover:block">
+              <a href="#" class="block px-4 py-2">My Degree</a>
+              <a href="#" class="block px-4 py-2">My University</a>
+            </div>
+          </div>
+          <div class="relative group">
+            <button class="text-white">Stared</button>
+            <div class="hidden absolute left-0 mt-2 bg-white shadow-lg text-black group-hover:block">
+              <a href="#" class="block px-4 py-2">Stared Classes</a>
+              <a href="#" class="block px-4 py-2">Stared Degrees</a>
+              <a href="#" class="block px-4 py-2">Stared Universitys</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right side -->
+        <div class="flex items-center space-x-4">
+          <!-- Profile dropdown -->
+          <div class="relative group">
+            <img src="your-profile-image-url" alt="Profile Picture" class="w-10 h-10 rounded-full cursor-pointer">
+            <div class="hidden absolute right-0 mt-2 bg-white shadow-lg text-black group-hover:block">
+              <a href="#" class="block px-4 py-2">Profile</a>
+              <a href="#" class="block px-4 py-2">Settings</a>
+              <a href="#" class="block px-4 py-2">FAQ's</a>
+              <a href="#" class="block px-4 py-2">Help</a>
+              <a href="#" class="block px-4 py-2">Logout</a>
+            </div>
+          </div>
+          
+          <!-- Notifications dropdown -->
+          <div class="relative group">
+            <button class="text-white">Notifications</button>
+            <div class="hidden absolute right-0 mt-2 bg-white shadow-lg text-black group-hover:block">
+              <!-- Add your notification items here -->
+              <a href="#" class="block px-4 py-2">Notification 1</a>
+              <a href="#" class="block px-4 py-2">Notification 2</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+</body>
+</html>
