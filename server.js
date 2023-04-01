@@ -2,8 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 const path = require("path");
+const multer = require('multer');
 
 const app = express();
+
 
 app.use('/static', express.static(path.resolve("frontend")));
 app.use(cors());
@@ -44,10 +46,50 @@ app.get("/", (req, res) => {
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 
+// Set up static files and views
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
+
+// Set up storage configuration for Multer
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+
+// Initialize the multer middleware with the storage configuration
+const upload = multer({ storage: storage });
+
+// An array to store the uploaded files
+const uploadedFiles = [];
+
+// Handle file uploads
+app.post('/upload', upload.single('file'), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ message: 'No file was provided.' });
+  }
+
+  // Add the uploaded file to the array
+  uploadedFiles.push({
+    filename: req.file.filename,
+    originalname: req.file.originalname,
+  });
+
+  res.status(200).json({ message: 'File uploaded successfully.', filename: req.file.filename });
+});
+
+// Display the uploaded files in a StackOverflow/Reddit-like way
+app.get('/files', (req, res) => {
+  res.render('files', { files: uploadedFiles });
+});
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
+    console.log(`Server is running at http://localhost:${PORT}`);
 });
 
 function initial() {
