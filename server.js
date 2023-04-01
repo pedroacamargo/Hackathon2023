@@ -65,27 +65,6 @@ const storage = multer.diskStorage({
   },
 });
 
-// Initialize the multer middleware with the storage configuration
-const upload = multer({ storage: storage });
-
-// An array to store the uploaded files
-const uploadedFiles = [];
-
-// Handle file uploads
-app.post('/upload', upload.single('file'), (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ message: 'No file was provided.' });
-  }
-
-  // Add the uploaded file to the array
-  uploadedFiles.push({
-    filename: req.file.filename,
-    originalname: req.file.originalname,
-  });
-
-  res.status(200).json({ message: 'File uploaded successfully.', filename: req.file.filename });
-});
-
 app.get('/new-post', (req, res) => {
   res.sendFile(path.resolve("frontend", "pages", "new-post.html"));
 });
