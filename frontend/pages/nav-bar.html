@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../styles/tailwind.css" />
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/colorPallete.css" />
+    <link rel="stylesheet" href="../styles/navbar.css" />
     <title>GitHub-like Navbar Test</title>
     <style>
       .dropdown {
@@ -58,7 +59,7 @@
           <!-- Left side -->
           <div class="flex items-center space-x-4">
             <!-- Logo -->
-            <a href="landing.html" class="text-white font-bold">UniHub</a>
+            <a href="landing.html" class="text-white font-bold"><img class="h-10" src="../imgs/logosm.jpg" alt="logo"></a>
             <!-- Search bar -->
             <form class="flex items-center">
               <label for="simple-search" class="sr-only">Search</label>
@@ -84,7 +85,7 @@
               </div>
               <button type="submit" class="ml-2">
                 <svg
-                  class="mr-2 -ml-1 w-5 h-5 mx-2"
+                  class="mr-2 -ml-2 w-5 h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -113,6 +114,7 @@
               <div
                 id="my-space-dropdown"
                 class="hidden absolute left-0 mt-2 bg-white shadow-lg text-black dropdown"
+                style="border-radius: 10px; border: 2px solid black;"
               >
                 <a href="#" class="block px-4 py-2 border-b">My Degree</a>
                 <a href="#" class="block px-4 py-2">My University</a>
@@ -129,9 +131,10 @@
               <div
                 id="stared-dropdown"
                 class="hidden absolute left-0 mt-2 bg-white shadow-lg text-black dropdown"
+                style="border-radius: 10px; border: 2px solid black"
               >
-                <a href="#" class="block px-4 py-2">Stared Classes</a>
-                <a href="#" class="block px-4 py-2">Stared Degrees</a>
+                <a href="#" class="block px-4 py-2 border-b">Stared Classes</a>
+                <a href="#" class="block px-4 py-2 border-b">Stared Degrees</a>
                 <a href="#" class="block px-4 py-2">Stared Universities</a>
               </div>
             </div>
@@ -153,6 +156,7 @@
               <div
                 id="notifications-dropdown"
                 class="hidden absolute right-0 mt-2 bg-white shadow-lg text-black dropdown"
+                style="border-radius: 10px;border: 2px solid black;"
               >
                 <!-- Add your notification items here -->
                 <a href="#" class="block px-4 py-2">Notification 1</a>
@@ -172,11 +176,12 @@
               <div
                 id="profile-dropdown"
                 class="hidden absolute right-0 mt-2 bg-white shadow-lg text-black dropdown"
+                style="border: 2px solid black; border-radius: 10px;"
               >
-                <a href="profile.html" class="block px-4 py-2">Profile</a>
-                <a href="#" class="block px-4 py-2">Settings</a>
-                <a href="#" class="block px-4 py-2">FAQ's</a>
-                <a href="#" class="block px-4 py-2">Help</a>
+                <a href="profile.html" class="block border-b px-4 py-2">Profile</a>
+                <a href="#" class="block px-4 py-2 border-b">Settings</a>
+                <a href="#" class="block px-4 py-2 border-b">FAQ's</a>
+                <a href="#" class="block px-4 py-2 border-b">Help</a>
                 <a href="#" class="block px-4 py-2">Logout</a>
               </div>
             </div>
