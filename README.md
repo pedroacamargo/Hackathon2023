@@ -1,1 +1,1 @@
-<code> To run the project with Tailwind: npm run dev </code>
+To run the project with Tailwind: <code> npm run dev </code>

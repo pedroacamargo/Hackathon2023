@@ -5,11 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/tailwind.css">
+    <link rel="stylesheet" href="../styles/colorPallete.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Document</title>
 </head>
-<body>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+<body class="overflow-hidden">
+    <div class="bg1 w-screen h-screen overflow-hidden">
+
+        <div class="rectangle"></div>
+        <div class="circle md:w-24 md:h-24 md:block hidden bg3 rounded-full absolute md:left-24 md:top-24 left-24 top-6 w-48 h-48"></div>
+
+        <div class="login md:w-96 w-80 h-96 bg1 border-2 border-stone-800 rounded-lg absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center flex-col text-white p-5">
+            <h2 class="text-3xl my-2">Welcome</h2>
+
+            <div class="flex my-3 relative">
+                <input type="text" id="username" placeholder="Username" class="rounded p-1 text-black">
+                <div class="w-7 h-8 absolute right-0 bg1 flex items-center justify-center"><i class="fa-solid fa-user"></i></div>
+            </div>
+            <div class="flex my-3 relative">
+                <input type="password" id="password" placeholder="Password" class="rounded p-1 text-black">
+                <div class="w-7 h-8 absolute right-0 bg1 flex items-center justify-center"><i class="fa-solid fa-lock"></i></div>
+            </div>
+
+            <div class="remember w-3/4 relative md:left-3 -left-3">
+                <input type="checkbox">
+                <span>Remember me</span>
+            </div>
+            
+            <div class="register my-3">
+                <a href="#" class="p-3 underline decoration-solid">Register</a>
+                <a href="#" class="p-5 underline decoration-solid">Forgot password</a>
+            </div>
+            
+            <button type="submit" class="bg3 hover:bg-white hover:text-black p-2 px-5 rounded m-5">Login</button>
+
+
+        </div>
+        
+
+
+    </div>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/631e0856b2.js" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+:root {
+    --cor1: #0A0B0D;
+    --cor2: #2D3540;
+    --cor3: #1C2026;
+    --cor4: #A4A5A6;
+    --cor5: #465059;
+    --cor6: #D9D9D9;
+}
+
+.rectangle {
+    position: absolute;
+    width: 1000px;
+    height: 1500px;
+    left: -400px;
+    top: -600px;
+    transform: rotate(45deg);
+    background-color: var(--cor6);
+}
+
+@media screen and (max-width: 768px) {
+    .rectangle {
+        left: -800px;
+    }
+
+    
+}
