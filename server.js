@@ -36,7 +36,7 @@ db.sequelize.sync();
 // });
 
 // simple route
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.resolve("frontend", "pages", "login.html"));
   // res.json({ message: "Welcome to bezkoder application." });
 });
