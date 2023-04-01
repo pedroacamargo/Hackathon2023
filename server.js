@@ -8,6 +8,7 @@ const app = express();
 
 
 app.use('/static', express.static(path.resolve("frontend")));
+
 app.use(cors());
 
 // parse requests of content-type - application/json
@@ -37,7 +38,7 @@ db.sequelize.sync();
 // });
 
 // simple route
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.resolve("frontend", "pages", "login.html"));
   // res.json({ message: "Welcome to bezkoder application." });
 });
