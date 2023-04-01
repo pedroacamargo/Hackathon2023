@@ -10,6 +10,8 @@ module.exports = function(app) {
     next();
   });
 
+  app.get("/api/user/profile", [authJwt.verifyToken], controller.sendProfile);
+
   app.get("/api/test/all", controller.allAccess);
 
   app.get(

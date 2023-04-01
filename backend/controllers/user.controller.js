@@ -1,5 +1,19 @@
+const db = require("../models");
+const User = db.user;
+
 exports.allAccess = (req, res) => {
   res.status(200).send("Public Content.");
+};
+
+exports.sendProfile = async (req, res) => {
+  try {
+    const user = await User.findByPk(req.userId);
+    res.status(200).send(user);
+  } catch (error) {
+    return res.status(500).send({
+      message: "Unable to find user!",
+    });
+  }
 };
 
 exports.userBoard = (req, res) => {

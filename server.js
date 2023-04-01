@@ -3,9 +3,9 @@ const cors = require("cors");
 const cookieSession = require("cookie-session");
 const path = require("path");
 const multer = require('multer');
-const authJwt = require("./app/middleware/authJwt");
+const authJwt = require("./backend/middleware/authJwt");
 const jwt = require("jsonwebtoken");
-const config = require("./app/config/auth.config.js");
+const config = require("./backend/config/auth.config.js");
 
 const app = express();
 
@@ -30,9 +30,9 @@ app.use(
 );
 
 // database
-const db = require("./app/models");
+const db = require("./backend/models");
 const Role = db.role;
-`""" `
+
 db.sequelize.sync();
 // force: true will drop the table if it already exists
 // db.sequelize.sync({force: true}).then(() => {
@@ -41,52 +41,30 @@ db.sequelize.sync();
 // });
 
 // routes
-require("./app/routes/auth.routes")(app);
-require("./app/routes/post.routes")(app);
-require("./app/routes/user.routes")(app);
+require("./backend/routes/auth.routes")(app);
+require("./backend/routes/post.routes")(app);
+require("./backend/routes/user.routes")(app);
 
 // Set up static files and views
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-// Set up storage configuration for Multer
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/');
-  },
-  filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-${file.originalname}`);
-  },
-});
-
-// Initialize the multer middleware with the storage configuration
-const upload = multer({ storage: storage });
-
-// An array to store the uploaded files
-const uploadedFiles = [];
-
-// Handle file uploads
-app.post('/upload', upload.single('file'), (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ message: 'No file was provided.' });
-  }
-
-  // Add the uploaded file to the array
-  uploadedFiles.push({
-    filename: req.file.filename,
-    originalname: req.file.originalname,
-  });
-
-  res.status(200).json({ message: 'File uploaded successfully.', filename: req.file.filename });
-});
 
 app.get('/new-post', (req, res) => {
   res.sendFile(path.resolve("frontend", "pages", "new-post.html"));
 });
 
-// Display the uploaded files in a StackOverflow/Reddit-like way
-app.get('/files', (req, res) => {
-  res.render('files', { files: uploadedFiles });
+app.get('/profile', (req, res) => {
+  res.sendFile(path.resolve("frontend", "pages", "profile.html"));
 });
+
+app.get('/edit-profile', (req, res) => {
+  res.sendFile(path.resolve("frontend", "pages", "edit-profile.html"));
+});
+
+// // Display the uploaded files in a StackOverflow/Reddit-like way
+// app.get('/files', (req, res) => {
+//   res.render('files', { files: uploadedFiles });
+// });
 
 // simple route
 app.get("/*", (req, res) => {
@@ -112,20 +90,3 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 });
-
-function initial() {
-  Role.create({
-    id: 1,
-    name: "user",
-  });
-
-  Role.create({
-    id: 2,
-    name: "moderator",
-  });
-
-  Role.create({
-    id: 3,
-    name: "admin",
-  });
-}

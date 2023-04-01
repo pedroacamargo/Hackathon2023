@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/tailwind.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/colorPallete.css">
+    <link rel="stylesheet" href="/static/styles/tailwind.css">
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="/static/styles/colorPallete.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Profile</title>
     <script>
@@ -19,6 +19,14 @@
           });
         }
       }
+    fetch('/api/user/profile')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        document.getElementById('username').innerHTML = data.username;
+        // document.getElementById('profile-fullname').innerHTML = data.fullname;
+        document.getElementById('profile-email').value = data.email;
+      })
     </script>
   </head>
   <body class="bg1">
@@ -52,7 +60,7 @@
                     <div class="bg1 relative p-2 px-4"><i class="fa-solid fa-envelope"></i></div>
                     <input id="profile-email" type="email" placeholder="Email" class="pl-3 text-black">
                 </div>
-                <div class=" flex border flex-row text-white text-2xl italic relative my-2">
+                <!-- <div class=" flex border flex-row text-white text-2xl italic relative my-2">
                     <div class="bg1 relative p-2 px-4"><i class="fa-brands fa-facebook"></i></div>
                     <input id="profile-facebook" type="text" placeholder="Facebook" class="pl-3 text-black">
                 </div>
@@ -71,7 +79,7 @@
                 <div class=" flex border flex-row text-white text-2xl italic relative my-2">
                     <div class="bg1 relative p-2 px-4"><i class="fa-brands fa-linkedin"></i></div>
                     <input id="profile-linkedin" type="text" placeholder="LinkedIn" class="pl-3 text-black">
-                </div>
+                </div> -->
             </div>
 
             <!-- Edit profile (just for the account owner) -->

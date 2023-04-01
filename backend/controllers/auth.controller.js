@@ -17,22 +17,25 @@ exports.signup = async (req, res) => {
       password: bcrypt.hashSync(req.body.password, 8),
     });
 
-    if (req.body.roles) {
-      const roles = await Role.findAll({
-        where: {
-          name: {
-            [Op.or]: req.body.roles,
-          },
-        },
-      });
+    // if (req.body.roles) {
+    //   const roles = await Role.findAll({
+    //     where: {
+    //       name: {
+    //         [Op.or]: req.body.roles,
+    //       },
+    //     },
+    //   });
 
-      const result = user.setRoles(roles);
-      if (result) res.send({ message: "User registered successfully!" });
-    } else {
-      // user has role = 1
-      const result = user.setRoles([1]);
-      if (result) res.send({ message: "User registered successfully!" });
-    }
+    //   // const result = user.setRoles(roles);
+    //   // if (result) 
+    //   res.send({ message: "User registered successfully!" });
+    // } else {
+    //   // user has role = 1
+    //   const result = user.setRoles([1]);
+    //   if (result) res.send({ message: "User registered successfully!" });
+    // }
+
+    res.send({ message: "User registered successfully!" });
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
@@ -65,19 +68,19 @@ exports.signin = async (req, res) => {
       expiresIn: 86400, // 24 hours
     });
 
-    let authorities = [];
-    const roles = await user.getRoles();
-    for (let i = 0; i < roles.length; i++) {
-      authorities.push("ROLE_" + roles[i].name.toUpperCase());
-    }
+    // let authorities = [];
+    // const roles = await user.getRoles();
+    // for (let i = 0; i < roles.length; i++) {
+    //   authorities.push("ROLE_" + roles[i].name.toUpperCase());
+    // }
 
     req.session.token = token;
 
     return res.status(200).send({
       id: user.id,
       username: user.username,
-      email: user.email,
-      roles: authorities,
+      email: user.email
+      // roles: authorities,
     });
   } catch (error) {
     return res.status(500).send({ message: error.message });
