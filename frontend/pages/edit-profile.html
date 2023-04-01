@@ -30,7 +30,15 @@
       });
     function arroz() {
       var edValue = document.getElementById("profile-org");
-      // fetch("/api/org/search").then()
+      fetch("/api/org/search").then(response => response.json()).then(data => {
+        console.log(data)
+        // data.forEach(element => {
+        //   var option = document.createElement("option");
+        //   option.text = element.name;
+        //   option.value = element.name;
+        //   edValue.add(option);
+        // });
+      });
     }
   </script>
 </head>
