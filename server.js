@@ -6,6 +6,13 @@ const multer = require('multer');
 
 const app = express();
 
+const currentDate = new Date();
+const day = String(currentDate.getDate()).padStart(2, '0');
+const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // January is 0
+const year = String(currentDate.getFullYear()).substr(-2);
+
+const formattedDate = `${day}-${month}-${year}`;
+
 
 app.use('/static', express.static(path.resolve("frontend")));
 
@@ -57,7 +64,7 @@ const storage = multer.diskStorage({
     cb(null, 'uploads/');
   },
   filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-${file.originalname}`);
+    cb(null, `${formattedDate}-${file.originalname}`);
   },
 });
 
