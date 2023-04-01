@@ -1,5 +1,19 @@
 const { authJwt } = require("../middleware");
 const controller = require("../controllers/post.controller");
+const multer = require('multer');
+
+// Set up storage configuration for Multer
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+
+// Initialize the multer middleware with the storage configuration
+const upload = multer({ storage: storage });
 
 module.exports = function(app) {
   app.use(function(req, res, next) {
@@ -10,5 +24,5 @@ module.exports = function(app) {
     next();
   });
 
-  app.post("/api/post/new", [authJwt.verifyToken], controller.newpost);
+  app.post("/api/post/new", [authJwt.verifyToken, upload.single('file')], controller.newpost);
 };

@@ -79,6 +79,10 @@ app.post('/upload', upload.single('file'), (req, res) => {
   res.status(200).json({ message: 'File uploaded successfully.', filename: req.file.filename });
 });
 
+app.get('/new-post', (req, res) => {
+  res.sendFile(path.resolve("frontend", "pages", "new-post.html"));
+});
+
 // Display the uploaded files in a StackOverflow/Reddit-like way
 app.get('/files', (req, res) => {
   res.render('files', { files: uploadedFiles });
@@ -99,7 +103,7 @@ app.get("/*", (req, res) => {
     req.userId = decoded.id;
   });
 
-  res.sendFile(path.resolve("frontend", "pages", "add-post.html"));
+  res.sendFile(path.resolve("frontend", "pages", "landing.html"));
   // res.json({ message: "Welcome to bezkoder application." });
 });
 

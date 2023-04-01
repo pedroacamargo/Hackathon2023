@@ -5,6 +5,9 @@ module.exports = (sequelize, Sequelize) => {
     },
     message: {
       type: Sequelize.STRING
+    },
+    filename: {
+      type: Sequelize.STRING
     }
     // date: {
     //   type: Sequelize.DATE
