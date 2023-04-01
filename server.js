@@ -3,6 +3,9 @@ const cors = require("cors");
 const cookieSession = require("cookie-session");
 const path = require("path");
 const multer = require('multer');
+const authJwt = require("./app/middleware/authJwt");
+const jwt = require("jsonwebtoken");
+const config = require("./app/config/auth.config.js");
 
 const app = express();
 
@@ -37,20 +40,14 @@ db.sequelize.sync();
 //   initial();
 // });
 
-// simple route
-app.get("/*", (req, res) => {
-  res.sendFile(path.resolve("frontend", "pages", "login.html"));
-  // res.json({ message: "Welcome to bezkoder application." });
-});
-
 // routes
 require("./app/routes/auth.routes")(app);
+require("./app/routes/post.routes")(app);
 require("./app/routes/user.routes")(app);
 
 // Set up static files and views
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-
 // Set up storage configuration for Multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -85,6 +82,25 @@ app.post('/upload', upload.single('file'), (req, res) => {
 // Display the uploaded files in a StackOverflow/Reddit-like way
 app.get('/files', (req, res) => {
   res.render('files', { files: uploadedFiles });
+});
+
+// simple route
+app.get("/*", (req, res) => {
+  let token = req.session.token;
+
+  if (!token) {
+    return res.sendFile(path.resolve("frontend", "pages", "login.html"));
+  }
+
+  jwt.verify(token, config.secret, (err, decoded) => {
+    if (err) {
+      return res.sendFile(path.resolve("frontend", "pages", "login.html"));
+    }
+    req.userId = decoded.id;
+  });
+
+  res.sendFile(path.resolve("frontend", "pages", "add-post.html"));
+  // res.json({ message: "Welcome to bezkoder application." });
 });
 
 // set port, listen for requests
