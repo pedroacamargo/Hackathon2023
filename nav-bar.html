@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>GitHub-like Navbar Test</title>
+    <script>
+      function toggleDropdown(id) {
+        document.getElementById(id).classList.toggle("hidden");
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="bg-gray-800 p-4">
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+          <!-- Left side -->
+          <div class="flex items-center space-x-4">
+            <!-- Logo -->
+            <a href="#" class="text-white font-bold">My Logo</a>
+
+            <!-- Search bar -->
+            <div class="relative">
+              <input
+                type="search"
+                placeholder="Search..."
+                class="rounded bg-gray-700 px-3 py-2 w-64 text-white focus:outline-none"
+              />
+              <button
+                class="absolute inset-y-0 right-0 flex items-center px-4 py-2 text-white"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+
+            <!-- Dropdowns -->
+            <div class="relative">
+              <button
+                onclick="toggleDropdown('my-space-dropdown')"
+                class="text-white"
+              >
+                My Space
+                <i class="fa-solid fa-chevron-down" style="color: #ffffff"></i>
+              </button>
+              <div
+                id="my-space-dropdown"
+                class="hidden absolute left-0 mt-2 bg-white shadow-lg text-black"
+              >
+                <a href="#" class="block px-4 py-2">My Degree</a>
+                <a href="#" class="block px-4 py-2">My University</a>
+              </div>
+            </div>
+            <div class="relative">
+              <button
+                onclick="toggleDropdown('stared-dropdown')"
+                class="text-white"
+              >
+                Stared
+                <i class="fa-solid fa-chevron-down" style="color: #ffffff"></i>
+              </button>
+              <div
+                id="stared-dropdown"
+                class="hidden absolute left-0 mt-2 bg-white shadow-lg text-black"
+              >
+                <a href="#" class="block px-4 py-2">Stared Classes</a>
+                <a href="#" class="block px-4 py-2">Stared Degrees</a>
+                <a href="#" class="block px-4 py-2">Stared Universitys</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right side -->
+          <div class="flex items-center space-x-4">
+            <!-- Notifications dropdown -->
+            <div class="relative">
+              <button
+                onclick="toggleDropdown('notifications-dropdown')"
+                class="fa-sharp fa-regular fa-bell"
+                style="color: #ffffff"
+              ></button>
+              <div
+                id="notifications-dropdown"
+                class="hidden absolute right-0 mt-2 bg-white shadow-lg text-black"
+              >
+                <!-- Add your notification items here -->
+                <a href="#" class="block px-4 py-2">Notification 1</a>
+                <a href="#" class="block px-4 py-2">Notification 2</a>
+              </div>
+            </div>
+
+            <!-- Profile dropdown -->
+            <div class="relative">
+              <img
+                src="uminho.png"
+                alt="Profile Picture"
+                class="w-10 h-10 rounded-full cursor-pointer"
+                onclick="toggleDropdown('profile-dropdown')"
+              />
+              <div
+                id="profile-dropdown"
+                class="hidden absolute right-0 mt-2 bg-white shadow-lg text-black"
+              >
+                <a href="#" class="block px-4 py-2">Profile</a>
+                <a href="#" class="block px-4 py-2">Settings</a>
+                <a href="#" class="block px-4 py-2">FAQ's</a>
+                <a href="#" class="block px-4 py-2">Help</a>
+                <a href="#" class="block px-4 py-2">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Add the following line to include the Font Awesome library for the search icon -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      integrity="sha384-sMA1tB7t+2e4DV1T2S//XsEsa0H7I0wxz4q3P4u8z4Kj7d12yf+1Y7JXKJ+eOAT/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/631e0856b2.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
