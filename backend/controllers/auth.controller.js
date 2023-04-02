@@ -1,12 +1,10 @@
-const db = require("../models");
-const config = require("../config/auth.config");
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+
+const db = require('../models');
+const config = require('../config/auth.config');
+
 const User = db.user;
-const Role = db.role;
-
-const Op = db.Sequelize.Op;
-
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
 
 exports.signup = async (req, res) => {
   // Save User to Database
@@ -14,7 +12,7 @@ exports.signup = async (req, res) => {
     const user = await User.create({
       username: req.body.username,
       email: req.body.email,
-      profile_filename: "default_avatar.png",
+      profile_filename: 'default_avatar.png',
       password: bcrypt.hashSync(req.body.password, 8),
     });
 
@@ -30,10 +28,9 @@ exports.signup = async (req, res) => {
 
     req.session.token = token;
 
-    return res.redirect("/");
-
+    return res.redirect('/');
   } catch (error) {
-    res.status(500).send({ message: error.message });
+    return res.status(500).send({ message: error.message });
   }
 };
 
@@ -46,17 +43,17 @@ exports.signin = async (req, res) => {
     });
 
     if (!user) {
-      return res.status(404).send({ message: "User Not found." });
+      return res.status(404).send({ message: 'User Not found.' });
     }
 
     const passwordIsValid = bcrypt.compareSync(
       req.body.password,
-      user.password
+      user.password,
     );
 
     if (!passwordIsValid) {
       return res.status(401).send({
-        message: "Invalid Password!",
+        message: 'Invalid Password!',
       });
     }
 
@@ -72,7 +69,7 @@ exports.signin = async (req, res) => {
 
     req.session.token = token;
 
-    return res.redirect("/");
+    return res.redirect('/');
   } catch (error) {
     return res.status(500).send({ message: error.message });
   }
@@ -81,8 +78,8 @@ exports.signin = async (req, res) => {
 exports.signout = async (req, res) => {
   try {
     req.session = null;
-    return res.redirect("/");
+    return res.redirect('/');
   } catch (err) {
-    this.next(err);
+    return this.next(err);
   }
 };

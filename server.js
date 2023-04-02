@@ -1,16 +1,13 @@
-const express = require("express");
-const cors = require("cors");
-const cookieSession = require("cookie-session");
-const path = require("path");
-const multer = require('multer');
-const authJwt = require("./backend/middleware/authJwt");
-const jwt = require("jsonwebtoken");
-const config = require("./backend/config/auth.config.js");
+const express = require('express');
+const cors = require('cors');
+const cookieSession = require('cookie-session');
+const path = require('path');
+const jwt = require('jsonwebtoken');
+const config = require('./backend/config/auth.config');
 
 const app = express();
 
-
-app.use('/static', express.static(path.resolve("frontend")));
+app.use('/static', express.static(path.resolve('frontend')));
 
 app.use(cors());
 
@@ -22,16 +19,15 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cookieSession({
-    name: "bezkoder-session",
-    secret: "COOKIE_SECRET", // should use as secret environment variable
+    name: 'bezkoder-session',
+    secret: 'COOKIE_SECRET', // should use as secret environment variable
     httpOnly: true,
-    sameSite: 'strict'
-  })
+    sameSite: 'strict',
+  }),
 );
 
 // database
-const db = require("./backend/models");
-const Role = db.role;
+const db = require('./backend/models');
 
 db.sequelize.sync();
 // force: true will drop the table if it already exists
@@ -41,42 +37,41 @@ db.sequelize.sync();
 // });
 
 // routes
-require("./backend/routes/auth.routes")(app);
-require("./backend/routes/org.routes")(app);
-require("./backend/routes/response.routes")(app);
-require("./backend/routes/question.routes")(app);
-require("./backend/routes/user.routes")(app);
+require('./backend/routes/auth.routes')(app);
+require('./backend/routes/response.routes')(app);
+require('./backend/routes/question.routes')(app);
+require('./backend/routes/user.routes')(app);
 
 // Set up static files and views
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/new-post', (req, res) => {
-  res.sendFile(path.resolve("frontend", "pages", "new-post.html"));
+  res.sendFile(path.resolve('frontend', 'pages', 'new-post.html'));
 });
 
 app.get('/new-question', (req, res) => {
-  res.sendFile(path.resolve("frontend", "pages", "new-question.html"));
+  res.sendFile(path.resolve('frontend', 'pages', 'new-question.html'));
 });
 
 app.get('/profile', (req, res) => {
-  res.sendFile(path.resolve("frontend", "pages", "profile.html"));
+  res.sendFile(path.resolve('frontend', 'pages', 'profile.html'));
 });
 
 app.get('/edit-profile', (req, res) => {
-  res.sendFile(path.resolve("frontend", "pages", "edit-profile.html"));
+  res.sendFile(path.resolve('frontend', 'pages', 'edit-profile.html'));
 });
 
 app.get('/repo', (req, res) => {
-  res.sendFile(path.resolve("frontend", "pages", "repo.html"));
+  res.sendFile(path.resolve('frontend', 'pages', 'repo.html'));
 });
 
 app.get('/university', (req, res) => {
-  res.sendFile(path.resolve("frontend", "pages", "university.html"));
+  res.sendFile(path.resolve('frontend', 'pages', 'university.html'));
 });
 
 app.get('/unirepos', (req, res) => {
-  res.sendFile(path.resolve("frontend", "pages", "unirepos.html"));
+  res.sendFile(path.resolve('frontend', 'pages', 'unirepos.html'));
 });
 
 // // Display the uploaded files in a StackOverflow/Reddit-like way
@@ -85,26 +80,26 @@ app.get('/unirepos', (req, res) => {
 // });
 
 // simple route
-app.get("/*", (req, res) => {
-  let token = req.session.token;
+app.get('/*', (req, res) => {
+  const { token } = req.session;
 
   if (!token) {
-    return res.sendFile(path.resolve("frontend", "pages", "login.html"));
+    return res.sendFile(path.resolve('frontend', 'pages', 'login.html'));
   }
 
   jwt.verify(token, config.secret, (err, decoded) => {
     if (err) {
-      return res.sendFile(path.resolve("frontend", "pages", "login.html"));
+      return res.sendFile(path.resolve('frontend', 'pages', 'login.html'));
     }
     req.userId = decoded.id;
   });
 
-  res.sendFile(path.resolve("frontend", "pages", "landing.html"));
+  return res.sendFile(path.resolve('frontend', 'pages', 'landing.html'));
   // res.json({ message: "Welcome to bezkoder application." });
 });
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`Server is running at http://localhost:${PORT}`);
 });

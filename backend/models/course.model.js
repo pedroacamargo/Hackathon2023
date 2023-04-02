@@ -1,13 +1,13 @@
 module.exports = (sequelize, Sequelize) => {
-  const Course = sequelize.define("courses", {
+  const Course = sequelize.define('courses', {
     name: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
     },
     orgId: {
-      type: Sequelize.INTEGER
+      type: Sequelize.INTEGER,
     },
     countryId: {
-      type: Sequelize.INTEGER
+      type: Sequelize.INTEGER,
     },
   });
 

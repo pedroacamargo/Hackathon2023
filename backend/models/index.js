@@ -1,6 +1,6 @@
-const config = require("../config/db.config.js");
+const Sequelize = require('sequelize');
+const config = require('../config/db.config.js');
 
-const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
   config.DB,
   config.USER,
@@ -13,9 +13,9 @@ const sequelize = new Sequelize(
       max: config.pool.max,
       min: config.pool.min,
       acquire: config.pool.acquire,
-      idle: config.pool.idle
-    }
-  }
+      idle: config.pool.idle,
+    },
+  },
 );
 
 const db = {};
@@ -23,10 +23,10 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.user = require("./user.model.js")(sequelize, Sequelize);
-db.course = require("./course.model.js")(sequelize, Sequelize);
-db.question = require("./question.model.js")(sequelize, Sequelize);
-db.response = require("./response.model.js")(sequelize, Sequelize);
+db.user = require('./user.model')(sequelize, Sequelize);
+db.course = require('./course.model')(sequelize, Sequelize);
+db.question = require('./question.model')(sequelize, Sequelize);
+db.response = require('./response.model')(sequelize, Sequelize);
 
 // db.role.belongsToMany(db.user, {
 //   through: "user_roles",
