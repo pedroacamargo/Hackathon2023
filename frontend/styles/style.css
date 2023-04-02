@@ -77,6 +77,10 @@ ul ul {
     color: white;
 }
 
+.submit-btn:hover {
+    
+}
+
 @media screen and (max-width: 768px) {
     .rectangle {
         left: -800px;
