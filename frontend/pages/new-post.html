@@ -4,20 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles/tailwind.css">
+    <link rel="stylesheet" href="static/styles/style.css">
+    <link rel="stylesheet" href="static/styles/colorPallete.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
 </head>
-<body>
-    // form to upload a message
-    <form action="/api/post/new" method="post" enctype="multipart/form-data">
-        <label for="file-input">Post message:</label>
-        <input type="text" name="message" placeholder="Message" />
-        <label for="file-input">Upload a file:</label>
-        <input type="file" id="file-input" name="file" />
-        <button type="submit">Post</button>
-    </form>
+<body class="bg1">
+
+    <div id="navbar"></div>
+
+
+    <div class="container flex justify-center" style="margin: auto;">
+        <form action="/api/post/new" method="post" enctype="multipart/form-data" style="padding-top: 100px; padding-left: 40px;">
+            <h1 class="text-white text-3xl italic font-bold text-center">Upload a question</h1>
+            <div style="margin-left: 40px !important;">
+                <i class="fa-solid fa-filter text-white bg1 relative p-2" style="left: 56px; top: 8px; border-radius: 7px 0 0 7px;"></i>
+                <input type="text" placeholder="Name" class="m-5 p-1 rounded-lg" style="padding-left: 35px;">
+                <i class="fa-solid fa-question text-white bg1 relative p-2" style="left: 30px; top: 8px; border-radius: 7px 0 0 7px;"></i>
+                <input type="text" placeholder="Question" class="p-1 rounded-lg" style="padding-left: 35px;">
+                <input type="file" id="file-input" name="file" style="margin-left: 20px;"/>
+            </div>
+            <button class="submit-filter p-2 px-4 rounded-lg" type="submit" style="margin-left: 400px; background-color: aqua;">Upload</button>
+        </form>
+    </div>
 
     <!-- <form action="/upload" method="post" enctype="multipart/form-data">
       <button type="submit">Upload</button>
     </form> -->
+
+
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+    integrity="sha384-sMA1tB7t+2e4DV1T2S//XsEsa0H7I0wxz4q3P4u8z4Kj7d12yf+1Y7JXKJ+eOAT/"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/631e0856b2.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    $(function(){
+        $("#navbar").load("nav-bar.html");
+    });
+  </script>
 </body>
 </html>
