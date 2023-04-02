@@ -17,7 +17,7 @@
 
 
     <div class="w-screen flex justify-between">
-        <div class="w-80 h-screen bg1 p-5 border-r" style="padding-top: 90px;">
+        <div class="w-80 h-screen bg1 p-5 border-r border-b" style="padding-top: 90px;">
             <h2 class="text-white text-center font-bold italic" id="university">University of Minho</h2><br>
             <h3 class="text-white text-center text-xs italic" style="margin-top: -20px;" id="course">Computer Science</h3>
 
@@ -57,8 +57,29 @@
                 <p id="enunciado" class="text-white text-justify w-full h-32 bg3" style="margin-left: 10px;"></p>
                 <!-- <div class="w-full h-32 bg3" style="margin-top: 10px;"></div> O height é só para debug para fazer a solução pro Davide rápido -->
 
+                <button class="bg1 border p-3 rounded-lg hover:bg-white hover:text-black text-white" style="margin-top: 20px; margin-left: 20px;" onclick="document.getElementById('resolutions').classList.remove('hidden')">Show resolutions</button>
+
+                <div id="resolutions" class="hidden">
                 <h1 class="text-white font-bold text-2xl underline italic" style="margin-top: 40px;">Resoluções:</h1>
-                <div>
+                    <div class="post-title flex flex-row justify-start items-center w-full">
+                        <img class="rounded-full w-10 h-10" src="../../test/imgs/Screenshot_20230316_114327.png" alt="profile pic">
+                        <!-- id:action can be comment, post, etc -->
+                        <p class="italic cursor-pointer mx-2 text-white"><span name="username" style="color: yellow;">Tuai-offline</span> resolution 
+                            <div class="p-1 rounded-full px-2" style="color: green; border: 1px solid green;"><i class="fa-solid fa-trophy" style="margin-right: 5px;"></i>Best</div>
+                        </p>
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                        <div class="flex flex-col items-center justify-center" style="margin-right: 10px;">
+                            <span class="text-white italic font-bold">53</span>
+                            <div class="flex flex-row">
+                                <span><i class="fa-solid fa-arrow-up cursor-pointer" style="color: #26a269; margin-right: 5px;"></i></span>
+                                <span><i class="fa-solid fa-arrow-down cursor-pointer" style="color: #a51d2d;"></i></span>
+                            </div>
+                        </div>
+                        <div class="w-full bg3 p-3" style="margin-top: 10px;">
+                            <code class="text-justify text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, ea fugiat animi, aperiam non amet sequi exercitationem totam optio quaerat distinctio explicabo ducimus consequuntur debitis veniam nesciunt, numquam suscipit rerum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officiis autem, itaque quam repellat dolores veniam blanditiis adipisci a rem quos fugit necessitatibus harum fuga soluta nisi, sapiente voluptatum porro!</code>
+                        </div>
+                    </div>
                     <div class="post-title flex flex-row justify-start items-center w-full">
                         <img class="rounded-full w-10 h-10" src="../../test/imgs/Screenshot_20230316_114327.png" alt="profile pic">
                         <!-- id:action can be comment, post, etc -->

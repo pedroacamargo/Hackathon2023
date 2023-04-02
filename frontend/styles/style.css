@@ -72,6 +72,15 @@ ul ul {
     color: greenyellow;
 }
 
+.submit-filter:hover {
+    background-color: blue !important; 
+    color: white;
+}
+
+.submit-btn:hover {
+    
+}
+
 @media screen and (max-width: 768px) {
     .rectangle {
         left: -800px;

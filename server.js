@@ -71,6 +71,14 @@ app.get('/repo', (req, res) => {
   res.sendFile(path.resolve("frontend", "pages", "repo.html"));
 });
 
+app.get('/university', (req, res) => {
+  res.sendFile(path.resolve("frontend", "pages", "university.html"));
+});
+
+app.get('/unirepos', (req, res) => {
+  res.sendFile(path.resolve("frontend", "pages", "unirepos.html"));
+});
+
 // // Display the uploaded files in a StackOverflow/Reddit-like way
 // app.get('/files', (req, res) => {
 //   res.render('files', { files: uploadedFiles });

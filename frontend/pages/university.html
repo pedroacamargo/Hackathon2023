@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/tailwind.css">
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="/static/styles/colorPallete.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title></title>
+</head>
+<body class="bg1">
+    
+    <div id="navbar"></div>
+
+    <div class="flex justify-center w-full ">
+        <div class="container h-96 flex flex-col items-center justify-start" style="padding-top: 90px;">
+            <img src="static/imgs/Screenshot_20230316_114327.png" class="rounded-full" style="margin: 15px; width: 80px; height:80px;" alt="">
+            <h1 class="text-white italic font-bold text-3xl text-center">University of Minho</h1>
+            <div class="container flex flex-row" style="width: 80%; margin-top: 20px;">
+                <div class="flex-1 p-3 flex flex-col justify-start items-center" style="display: flex; flex: 1;">
+                    <h1 class="text-white text-center font-bold italic text-2xl bg3 p-2" style="width: 90%;">Students</h1>
+                    <div id="lcc" class="bg2 p-5 rounded-lg cursor-pointer" onclick="window.location.href = '/unirepos'" style="border:1px solid rgb(63, 62, 62);width: 80%; margin-top: 10px;">
+                        <div class="flex justify-start items-center">
+                            <i class="fa-solid fa-book text-white mx-2"></i>
+                            <p class="text-white font-bold italic">LCC</p>
+                        </div>
+                        <p class="text-white my-3 text-sm" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, reiciendis vel nobis optio omnis natus eius culpa fuga! Eaque ex sit ad ab natus perferendis quos! Deleniti omnis aperiam laboriosam!</p>
+                    </div>
+
+                    <div class="bg2 p-5 rounded-lg cursor-pointer" style="border:1px solid rgb(63, 62, 62);width: 80%; margin-top: 10px;">
+                        <div class="flex justify-start items-center">
+                            <i class="fa-solid fa-book text-white mx-2"></i>
+                            <p class="text-white font-bold italic">LEI</p>
+                        </div>
+                        <p class="text-white my-3 text-sm" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, reiciendis vel nobis optio omnis natus eius culpa fuga! Eaque ex sit ad ab natus perferendis quos! Deleniti omnis aperiam laboriosam!</p>
+                    </div>
+
+                </div>
+                <div class="flex-1 p-3 flex flex-col justify-start items-center" style="display: flex; flex: 1;">
+                    <h1 class="text-white text-center font-bold italic text-2xl bg3 p-2" style="width: 90%;">Public</h1>
+                    <div class="bg2 p-5 rounded-lg cursor-pointer" style="border:1px solid rgb(63, 62, 62);width: 80%; margin-top: 10px;">
+                        <div class="flex justify-start items-center">
+                            <i class="fa-solid fa-book text-white mx-2"></i>
+                            <p class="text-white font-bold italic">LCC PUBLIC</p>
+                        </div>
+                        <p class="text-white my-3 text-sm" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, reiciendis vel nobis optio omnis natus eius culpa fuga! Eaque ex sit ad ab natus perferendis quos! Deleniti omnis aperiam laboriosam!</p>
+                    </div>
+                </div>
+                <div class="flex-1 p-3 flex flex-col justify-start items-center" style="display: flex; flex: 1;">
+                    <h1 class="text-white text-center font-bold italic text-2xl bg3 p-2" style="width: 90%;">Others</h1>
+                    <div class="bg2 p-5 rounded-lg cursor-pointer" style="border:1px solid rgb(63, 62, 62);width: 80%; margin-top: 10px;">
+                        <div class="flex justify-start items-center">
+                            <i class="fa-solid fa-book text-white mx-2"></i>
+                            <p class="text-white font-bold italic">ARROZ</p>
+                        </div>
+                        <p class="text-white my-3 text-sm" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, reiciendis vel nobis optio omnis natus eius culpa fuga! Eaque ex sit ad ab natus perferendis quos! Deleniti omnis aperiam laboriosam!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      integrity="sha384-sMA1tB7t+2e4DV1T2S//XsEsa0H7I0wxz4q3P4u8z4Kj7d12yf+1Y7JXKJ+eOAT/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/631e0856b2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function(){
+          $("#navbar").load("nav-bar.html");
+      });
+    </script>
+</body>
+</html>

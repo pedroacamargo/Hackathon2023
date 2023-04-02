@@ -23,16 +23,5 @@ function editBio() {
 }
 
 function editProfile() {
-
-    // if editing profile, submit the changes
-    if (window.location.href == "edit-profile.html") {
-
-
-        // submit logic to implement
-
-        
-        window.location.href = "profile.html" // fix this
-    } else { // if not editing profile, load the edit profile menu
-        window.location.href = "edit-profile.html"
-    }
+    window.location.href = "/edit-profile"
 }

@@ -50,7 +50,7 @@
     </script>
   </head>
   <body class="bg1 h-screen w-screen">
-    <nav class="bg3 p-4 fixed w-screen z-10">
+    <nav class="bg3 p-4 fixed w-screen" style="z-index: 98;">
       <div class="container mx-auto">
         <div class="flex justify-between items-center">
           <!-- Left side -->
@@ -58,7 +58,7 @@
             <!-- Logo -->
             <a href="/" class="text-white font-bold"><img class="h-10" src="/static/imgs/logosm.jpg" alt="logo"></a>
             <!-- Search bar -->
-            <form class="flex items-center">
+            <form class="items-center hidden lg:flex">
               <label for="simple-search" class="sr-only">Search</label>
               <div class="relative w-full">
                 <div
@@ -100,7 +100,7 @@
             </form>
 
             <!-- Dropdowns -->
-            <div class="relative">
+            <div class="relative hidden sm:block">
               <button
                 onclick="toggleDropdown('my-space-dropdown', ['stared-dropdown', 'notifications-dropdown', 'profile-dropdown'])"
                 class="text-white dropdown-button"
@@ -114,10 +114,10 @@
                 style="border-radius: 10px; border: 2px solid black;"
               >
                 <a href="#" class="block px-4 py-2 border-b">My Degree</a>
-                <a href="/repo" class="block px-4 py-2">My University</a>
+                <a href="/university" class="block px-4 py-2">My University</a>
               </div>
             </div>
-            <div class="relative">
+            <div class="relative hidden sm:block">
               <button
                 onclick="toggleDropdown('stared-dropdown', ['my-space-dropdown', 'notifications-dropdown', 'profile-dropdown'])"
                 class="text-white dropdown-button"
@@ -165,13 +165,18 @@
               New Post
             </a>
 
+            <a text="New Post" href="/new-post" class="block lg:hidden bg-blue-500 hover:bg-blue-700 text-white text-2xl font-bold py-1 px-3 rounded-full">
+              +
+            </a>
+
+
             <!-- Profile dropdown -->
             <div class="relative">
               <img
                 id="profile-picture"
                 src="../uminho.png"
                 alt="Profile Picture"
-                class="w-10 h-10 rounded-full cursor-pointer dropdown-button"
+                class="w-10 h-10 rounded-full cursor-pointer dropdown-button text-white"
                 onclick="toggleDropdown('profile-dropdown', ['my-space-dropdown', 'stared-dropdown', 'notifications-dropdown'])"
               />
 
