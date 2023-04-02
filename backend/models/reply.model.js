@@ -1,16 +1,16 @@
 module.exports = (sequelize, Sequelize) => {
-  const Post = sequelize.define("posts", {
+  const Post = sequelize.define("replys", {
     userId: {
       type: Sequelize.INTEGER
     },
-    message: {
+    reply: {
       type: Sequelize.STRING
     },
-    filename: {
-      type: Sequelize.STRING
-    },
-    commentIds: {
+    replyIds: {
       type: Sequelize.ARRAY(Sequelize.INTEGER)
+    },
+    replyTime: {
+      type: Sequelize.INTEGER
     }
     // date: {
     //   type: Sequelize.DATE
