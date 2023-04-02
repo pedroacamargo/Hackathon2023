@@ -26,9 +26,9 @@
     cursor: pointer;
 }
 
-.feed-active {
-    border: 2px solid white;
-    background-color: var(--cor6);
+.feed-active {    
+    background-color: white !important;
+    color: black !important;
 }
 
 .feed-container {
@@ -48,6 +48,10 @@
 .spam {
     color: red;
     font-weight: bold;
+}
+
+.move {
+    left: 400px !important;
 }
 
 
