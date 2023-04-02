@@ -90,4 +90,19 @@ ul ul {
         display: none;
     }
     
+    .feed-nav {
+        font-size: .7em;
+    }
+
+    .post-desc {
+        font-size: .8em;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .feed-nav {
+        margin: 2px !important;
+        padding: 7px !important;
+    }
 }
