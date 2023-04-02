@@ -23,7 +23,6 @@
     fetch('/api/user/profile')
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         document.getElementById('username').innerHTML = "@" + data.username;
         // document.getElementById('profile-fullname').innerHTML = data.fullname;
         document.getElementById('profile-email').value = data.email;
