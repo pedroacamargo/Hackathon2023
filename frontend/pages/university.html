@@ -18,9 +18,12 @@
         <div class="container h-96 flex flex-col items-center justify-start" style="padding-top: 90px;">
             <img src="static/imgs/Screenshot_20230316_114327.png" class="rounded-full" style="margin: 15px; width: 80px; height:80px;" alt="">
             <h1 class="text-white italic font-bold text-3xl text-center">University of Minho</h1>
-            <div class="container flex flex-row" style="width: 80%; margin-top: 20px;">
-                <div class="flex-1 p-3 flex flex-col justify-start items-center" style="display: flex; flex: 1;">
-                    <h1 class="text-white text-center font-bold italic text-2xl bg3 p-2" style="width: 90%;">Students</h1>
+            <div class="container grid grid-cols-3 gap-4" style="width: 80%; margin-top: 20px;"> <!-- Change to grid layout -->
+                <div class="col-span-1">
+                    <div class="flex-1 p-3 flex flex-col justify-start items-center" style="display: flex; flex: 1;">
+                        <!-- Licenciatura section -->
+                    <h1 class="text-white text-center font-bold italic text-2xl bg3 p-2 cursor-pointer rounded-lg" style="width: 90%;" onclick="document.getElementById('degree').classList.remove('hidden')">LICENCIATURA</h1>
+                    <div class="hidden flex flex-col justify-center items-center" id="degree">
                     <div id="lcc" class="bg2 p-5 rounded-lg cursor-pointer" onclick="window.location.href = '/unirepos'" style="border:1px solid rgb(63, 62, 62);width: 80%; margin-top: 10px;">
                         <div class="flex justify-start items-center">
                             <i class="fa-solid fa-book text-white mx-2"></i>
@@ -37,25 +40,52 @@
                         <p class="text-white my-3 text-sm" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, reiciendis vel nobis optio omnis natus eius culpa fuga! Eaque ex sit ad ab natus perferendis quos! Deleniti omnis aperiam laboriosam!</p>
                     </div>
 
-                </div>
-                <div class="flex-1 p-3 flex flex-col justify-start items-center" style="display: flex; flex: 1;">
-                    <h1 class="text-white text-center font-bold italic text-2xl bg3 p-2" style="width: 90%;">Public</h1>
                     <div class="bg2 p-5 rounded-lg cursor-pointer" style="border:1px solid rgb(63, 62, 62);width: 80%; margin-top: 10px;">
                         <div class="flex justify-start items-center">
                             <i class="fa-solid fa-book text-white mx-2"></i>
-                            <p class="text-white font-bold italic">LCC PUBLIC</p>
+                            <p class="text-white font-bold italic">Relações Internacionais</p>
                         </div>
                         <p class="text-white my-3 text-sm" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, reiciendis vel nobis optio omnis natus eius culpa fuga! Eaque ex sit ad ab natus perferendis quos! Deleniti omnis aperiam laboriosam!</p>
                     </div>
-                </div>
-                <div class="flex-1 p-3 flex flex-col justify-start items-center" style="display: flex; flex: 1;">
-                    <h1 class="text-white text-center font-bold italic text-2xl bg3 p-2" style="width: 90%;">Others</h1>
+
                     <div class="bg2 p-5 rounded-lg cursor-pointer" style="border:1px solid rgb(63, 62, 62);width: 80%; margin-top: 10px;">
                         <div class="flex justify-start items-center">
                             <i class="fa-solid fa-book text-white mx-2"></i>
-                            <p class="text-white font-bold italic">ARROZ</p>
+                            <p class="text-white font-bold italic">Pseudo-ciência</p>
                         </div>
                         <p class="text-white my-3 text-sm" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, reiciendis vel nobis optio omnis natus eius culpa fuga! Eaque ex sit ad ab natus perferendis quos! Deleniti omnis aperiam laboriosam!</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-span-1">
+                <div class="flex-1 p-3 flex flex-col justify-start items-center" style="display: flex; flex: 1;">
+                    <!-- Master section -->
+                    <h1 class="text-white text-center font-bold italic text-2xl bg3 p-2 cursor-pointer rounded-lg" style="width: 90%;" onclick="document.getElementById('master').classList.remove('hidden')">Master</h1>
+                    <div class="hidden flex flex-col justify-center items-center" id="master">
+                        <div class="bg2 p-5 rounded-lg cursor-pointer" style="border:1px solid rgb(63, 62, 62);width: 80%; margin-top: 10px;">
+                            <div class="flex justify-start items-center">
+                                <i class="fa-solid fa-book text-white mx-2"></i>
+                                <p class="text-white font-bold italic">MIEI</p>
+                            </div>
+                            <p class="text-white my-3 text-sm" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, reiciendis vel nobis optio omnis natus eius culpa fuga! Eaque ex sit ad ab natus perferendis quos! Deleniti omnis aperiam laboriosam!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-1">
+                    <div class="flex-1 p-3 flex flex-col justify-start items-center" style="display: flex; flex: 1;">
+                        <!-- PhD section -->
+                    <h1 class="text-white text-center font-bold italic text-2xl bg3 p-2 cursor-pointer rounded-lg" style="width: 90%;" onclick="document.getElementById('phd').classList.remove('hidden')">PhD</h1>
+                    <div class="hidden flex flex-col justify-center items-center" id="phd">
+                        <div class="bg2 p-5 rounded-lg cursor-pointer" style="border:1px solid rgb(63, 62, 62);width: 80%; margin-top: 10px;">
+                            <div class="flex justify-start items-center">
+                                <i class="fa-solid fa-book text-white mx-2"></i>
+                                <p class="text-white font-bold italic">Cybersecurity</p>
+                            </div>
+                            <p class="text-white my-3 text-sm" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, reiciendis vel nobis optio omnis natus eius culpa fuga! Eaque ex sit ad ab natus perferendis quos! Deleniti omnis aperiam laboriosam!</p>
+                        </div>
                     </div>
                 </div>
             </div>
