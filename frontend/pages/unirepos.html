@@ -14,8 +14,83 @@
     
     <div id="navbar"></div>
 
-    <div>
-        <div class="container border" style="padding-top: 90px;">
+    <div class="flex justify-center">
+        <div class="container flex flex-col items-center" style="padding-top: 90px;">
+            <h1 class="text-white text-3xl font-bold italic text-center m-5">LCC</h1>
+
+            <!-- Filters -->
+            <form action="#" class="flex flex-col" style="margin-bottom: 20px;">
+                <div style="margin-left: -20px !important;">
+                    <i class="fa-solid fa-filter text-white bg1 relative p-2" style="left: 56px; top: 8px; border-radius: 7px 0 0 7px;"></i>
+                    <input type="text" placeholder="Search by name..." class="m-5 p-1 rounded-lg" style="padding-left: 35px;">
+
+                    <i class="fa-solid fa-book text-white bg1 relative p-2" style="left: 34px; top: 8px; border-radius: 7px 0 0 7px;"></i>
+                    <input type="text" placeholder="Search by subject..." class="p-1 rounded-lg" style="padding-left: 35px;">
+                </div>
+                <div class="border-b pb-5" style="padding-left: 0px; padding-right: 40px;">
+                    <i class="fa-solid fa-calendar text-white bg1 relative p-2" style="left: 34px; top: 8px; border-radius: 7px 0 0 7px;"></i>
+                    <input type="number" placeholder="Semester" class="p-1 rounded-lg" style="padding-left: 35px; width: 120px;">
+                    <i class="fa-solid fa-calendar text-white bg1 relative p-2" style="left: 34px; top: 8px; border-radius: 7px 0 0 7px;"></i>
+                    <input type="number" placeholder="Year" class="p-1 rounded-lg" style="padding-left: 35px; width: 120px;">
+                    <input class="submit-filter p-2 rounded-lg text-black cursor-pointer" type="submit" value="Filter" style="background-color: cyan;margin-left: 250px; border: 1px solid black;">
+                </div>
+            </form>
+            
+            <div class="w-1/2 relative cursor-pointer" onclick="window.location.href = '/repo'">
+                <div class="w-full bg3 p-5 flex flex-col justify-center">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-book-open text-white text-3xl"></i>
+                        <p class="text-white font-bold italic text-2xl" style="margin-left: 10px;">PI - Mini Teste 4</p>
+                    </div>
+                    <p class="text-white text-sm" style="padding: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, magnam consequatur nemo, odit rerum quidem voluptatibus ex fugiat omnis numquam asperiores ipsa nesciunt qui accusamus ipsum reiciendis nulla saepe? Sint!</p>
+                    <p class="text-white font-bold hover:text-black cursor-pointer"><span id="resolutions-amount">3</span> Resolutions</p>
+                </div>
+                <div class="divider absolute z-50" style="width: 90%;height: 1px; background-color: rgba(221, 217, 217, 0.185); left: 5%;"></div>
+            </div>
+            <div class=" w-1/2 relative cursor-pointer">
+                <div class="w-full bg3 p-5 flex flex-col justify-center">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-book-open text-white text-3xl"></i>
+                        <p class="text-white font-bold italic text-2xl" style="margin-left: 10px;">PI - Mini Teste 2</p>
+                    </div>
+                    <p class="text-white text-sm" style="padding: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, magnam consequatur nemo, odit rerum quidem voluptatibus ex fugiat omnis numquam asperiores ipsa nesciunt qui accusamus ipsum reiciendis nulla saepe? Sint!</p>
+                    <p class="text-white font-bold hover:text-black cursor-pointer"><span id="resolutions-amount">3</span> Resolutions</p>
+                </div>
+                <div class="divider absolute z-50" style="width: 90%;height: 1px; background-color: rgba(221, 217, 217, 0.185); left: 5%;"></div>
+            </div>
+            <div class="w-1/2 relative cursor-pointer">
+                <div class="w-full bg3 p-5 flex flex-col justify-center">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-book-open text-white text-3xl"></i>
+                        <p class="text-white font-bold italic text-2xl" style="margin-left: 10px;">PI - Mini Teste 3</p>
+                    </div>
+                    <p class="text-white text-sm" style="padding: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, magnam consequatur nemo, odit rerum quidem voluptatibus ex fugiat omnis numquam asperiores ipsa nesciunt qui accusamus ipsum reiciendis nulla saepe? Sint!</p>
+                    <p class="text-white font-bold hover:text-black cursor-pointer"><span id="resolutions-amount">3</span> Resolutions</p>
+                </div>
+                <div class="divider absolute z-50" style="width: 90%;height: 1px; background-color: rgba(221, 217, 217, 0.185); left: 5%;"></div>
+            </div>
+            <div class="w-1/2 relative cursor-pointer">
+                <div class="w-full bg3 p-5 flex flex-col justify-center">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-book-open text-white text-3xl"></i>
+                        <p class="text-white font-bold italic text-2xl" style="margin-left: 10px;">LA - Semana 6 - Desafio D</p>
+                    </div>
+                    <p class="text-white text-sm" style="padding: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, magnam consequatur nemo, odit rerum quidem voluptatibus ex fugiat omnis numquam asperiores ipsa nesciunt qui accusamus ipsum reiciendis nulla saepe? Sint!</p>
+                    <p class="text-white font-bold hover:text-black cursor-pointer"><span id="resolutions-amount">17</span> Resolutions</p>
+                </div>
+                <div class="divider absolute z-50" style="width: 90%;height: 1px; background-color: rgba(221, 217, 217, 0.185); left: 5%;"></div>
+            </div>
+            <div class="w-1/2 relative cursor-pointer">
+                <div class="w-full bg3 p-5 flex flex-col justify-center">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-book-open text-white text-3xl"></i>
+                        <p class="text-white font-bold italic text-2xl" style="margin-left: 10px;">SC - Teste 1</p>
+                    </div>
+                    <p class="text-white text-sm" style="padding: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, magnam consequatur nemo, odit rerum quidem voluptatibus ex fugiat omnis numquam asperiores ipsa nesciunt qui accusamus ipsum reiciendis nulla saepe? Sint!</p>
+                    <p class="text-white font-bold hover:text-black cursor-pointer"><span id="resolutions-amount">2</span> Resolutions</p>
+                </div>
+                <div class="divider absolute z-50" style="width: 90%;height: 1px; background-color: rgba(221, 217, 217, 0.185); left: 5%;"></div>
+            </div>
         </div>
     </div>
 
