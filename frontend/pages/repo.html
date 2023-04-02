@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/tailwind.css">
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="/static/styles/colorPallete.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title></title>
+</head>
+<body class="bg1">
+    
+    <div id="navbar"></div>
+
+
+    <div class="w-screen flex justify-between">
+        <div class="w-80 h-screen bg1 p-5 border-r" style="padding-top: 90px;">
+            <h2 class="text-white text-center font-bold italic" id="university">University of Minho</h2><br>
+            <h3 class="text-white text-center text-xs italic" style="margin-top: -20px;" id="course">Computer Science</h3>
+
+            <!-- Directory -->
+            <h2 class="text-white font-bold italic text-sm p-4">Directory:</h2>
+            <ul class="text-white">
+                <li class="text-white"><i class="fa-solid fa-folder mx-2"></i>LCC
+                    <ul>
+                        <li class="text-white"><i class="fa-solid fa-folder mx-2"></i>1° Semestre
+                            <ul>
+                                <li><i class="fa-solid fa-file mx-2"></i>PF</li>
+                                <li><i class="fa-solid fa-file mx-2"></i>OPUM</li>
+                                <li><i class="fa-solid fa-file mx-2"></i>TM</li>
+                            </ul>
+                        </li>
+                        <li><i class="fa-solid fa-folder mx-2"></i>2°Semestre
+                            <ul>
+                                <li class="active-file"><i class="fa-solid fa-file mx-2"></i>PI</li>
+                                <li><i class="fa-solid fa-file mx-2"></i>MD</li>
+                                <li><i class="fa-solid fa-file mx-2"></i>SC</li>
+                                <li><i class="fa-solid fa-file mx-2"></i>LA</li>
+                                <li><i class="fa-solid fa-file mx-2"></i>GM</li>
+                                <li><i class="fa-solid fa-file mx-2"></i>AN</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="container" style="padding-top: 90px;">
+            <div class="flex flex-row justify-center items-center">
+                <p class="text-white font-bold text-3xl italic p-5"><span>PI</span> - <span>Mini-Teste 4</span></p>
+            </div>
+            <div class="p-5">
+                <h1 class="text-white font-bold text-2xl underline italic" style="margin-left: 10px;">Enunciado:</h1>
+                <div class="w-full h-32 bg3" style="margin-top: 10px;"></div> <!-- O height é só para debug para fazer a solução pro Davide rápido -->
+
+                <h1 class="text-white font-bold text-2xl underline italic" style="margin-top: 40px;">Resoluções:</h1>
+                <div>
+                    <div class="post-title flex flex-row justify-start items-center w-full">
+                        <img class="rounded-full w-10 h-10" src="../../test/imgs/Screenshot_20230316_114327.png" alt="profile pic">
+                        <!-- id:action can be comment, post, etc -->
+                        <p class="italic cursor-pointer mx-2 text-white"><span name="username" style="color: yellow;">Tuai-offline</span> resolution 
+                            <div class="p-1 rounded-full px-2" style="color: green; border: 1px solid green;"><i class="fa-solid fa-trophy" style="margin-right: 5px;"></i>Best</div>
+                        </p>
+                    </div>
+                    <div class="flex flex-row items-center justify-center">
+                        <div class="flex flex-col items-center justify-center" style="margin-right: 10px;">
+                            <span class="text-white italic font-bold">53</span>
+                            <div class="flex flex-row">
+                                <span><i class="fa-solid fa-arrow-up cursor-pointer" style="color: #26a269; margin-right: 5px;"></i></span>
+                                <span><i class="fa-solid fa-arrow-down cursor-pointer" style="color: #a51d2d;"></i></span>
+                            </div>
+                        </div>
+                        <div class="w-full bg3 p-3" style="margin-top: 10px;">
+                            <code class="text-justify text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, ea fugiat animi, aperiam non amet sequi exercitationem totam optio quaerat distinctio explicabo ducimus consequuntur debitis veniam nesciunt, numquam suscipit rerum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officiis autem, itaque quam repellat dolores veniam blanditiis adipisci a rem quos fugit necessitatibus harum fuga soluta nisi, sapiente voluptatum porro!</code>
+                        </div>
+                    </div>
+
+                    <div class="post-title flex flex-row justify-start items-center w-full">
+                        <img class="rounded-full w-10 h-10" src="../../test/imgs/Screenshot_20230316_114327.png" alt="profile pic">
+                        <!-- id:action can be comment, post, etc -->
+                        <p class="italic cursor-pointer mx-2 text-white"><span name="username" style="color: yellow;">Arroz</span> resolution 
+                            <div class="p-1 rounded-full px-2" style="color: orange; border: 1px solid orange;"><i class="fa-solid fa-trophy" style="margin-right: 5px;"></i>Top</div>
+                        </p>
+                    </div>
+
+                    <div class="flex flex-row items-center justify-center">
+                        <div class="flex flex-col items-center justify-center" style="margin-right: 10px;">
+                            <span class="text-white italic font-bold">24</span>
+                            <div class="flex flex-row">
+                                <span><i class="fa-solid fa-arrow-up cursor-pointer" style="color: #26a269; margin-right: 5px;"></i></span>
+                                <span><i class="fa-solid fa-arrow-down cursor-pointer" style="color: #a51d2d;"></i></span>
+                            </div>
+                        </div>
+                        <div class="w-full bg3 p-3" style="margin-top: 10px;">
+                            <code class="text-justify text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, ea fugiat animi, aperiam non amet sequi exercitationem totam optio quaerat distinctio explicabo ducimus consequuntur debitis veniam nesciunt, numquam suscipit rerum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officiis autem, itaque quam repellat dolores veniam blanditiis adipisci a rem quos fugit necessitatibus harum fuga soluta nisi, sapiente voluptatum porro!</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      integrity="sha384-sMA1tB7t+2e4DV1T2S//XsEsa0H7I0wxz4q3P4u8z4Kj7d12yf+1Y7JXKJ+eOAT/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/631e0856b2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function(){
+          $("#navbar").load("nav-bar.html");
+      });
+    </script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+    integrity="sha384-sMA1tB7t+2e4DV1T2S//XsEsa0H7I0wxz4q3P4u8z4Kj7d12yf+1Y7JXKJ+eOAT/"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/631e0856b2.js"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

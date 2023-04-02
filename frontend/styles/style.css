@@ -41,7 +41,7 @@
 }
 
 .top {
-    color: green;
+    color: orange;
     font-weight: bold;
 }
 
@@ -54,6 +54,23 @@
     left: 400px !important;
 }
 
+ul {
+    cursor: pointer;
+}
+
+li {
+    margin-left: 1em; /* add left margin to the list item */
+    cursor: pointer;
+}
+
+/* nested unordered list */
+ul ul {
+    margin-left: 1em; /* add left margin to the nested unordered list */
+}
+
+.active-file {
+    color: greenyellow;
+}
 
 @media screen and (max-width: 768px) {
     .rectangle {
