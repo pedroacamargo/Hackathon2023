@@ -42,7 +42,9 @@ db.sequelize.sync();
 
 // routes
 require("./backend/routes/auth.routes")(app);
+require("./backend/routes/org.routes")(app);
 require("./backend/routes/post.routes")(app);
+require("./backend/routes/blog.routes")(app);
 require("./backend/routes/user.routes")(app);
 
 // Set up static files and views
@@ -51,6 +53,10 @@ app.set('view engine', 'ejs');
 
 app.get('/new-post', (req, res) => {
   res.sendFile(path.resolve("frontend", "pages", "new-post.html"));
+});
+
+app.get('/new-blog', (req, res) => {
+  res.sendFile(path.resolve("frontend", "pages", "new-blog.html"));
 });
 
 app.get('/profile', (req, res) => {

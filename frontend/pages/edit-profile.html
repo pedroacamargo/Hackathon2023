@@ -24,22 +24,52 @@
       .then(response => response.json())
       .then(data => {
         console.log(data)
-        document.getElementById('username').innerHTML = data.username;
+        document.getElementById('username').innerHTML = "@" + data.username;
         // document.getElementById('profile-fullname').innerHTML = data.fullname;
         document.getElementById('profile-email').value = data.email;
       });
-    function arroz() {
-      var edValue = document.getElementById("profile-org");
-      fetch("/api/org/search").then(response => response.json()).then(data => {
-        console.log(data)
-        // data.forEach(element => {
-        //   var option = document.createElement("option");
-        //   option.text = element.name;
-        //   option.value = element.name;
-        //   edValue.add(option);
-        // });
-      });
-    }
+    // Example POST method implementation:
+    // async function postData(url = "", data = {}) {
+    //   // Default options are marked with *
+    //   const response = await fetch(url, {
+    //     method: "POST", // *GET, POST, PUT, DELETE, etc.
+    //     mode: "cors", // no-cors, *cors, same-origin
+    //     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    //     credentials: "same-origin", // include, *same-origin, omit
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       // 'Content-Type': 'application/x-www-form-urlencoded',
+    //     },
+    //     redirect: "follow", // manual, *follow, error
+    //     referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    //     body: JSON.stringify(data), // body data type must match "Content-Type" header
+    //   });
+    //   return response.json(); // parses JSON response into native JavaScript objects
+    // }
+
+    // function arroz() {
+    //   var edValue = document.getElementById("profile-org");
+    //   const formData = new FormData();
+    //   formData.
+    //     formData.append("value", edValue.value);
+
+
+    //   postData("/api/org/search", { value: edValue.value }).then((data) => {
+    //     console.log(data); // JSON data parsed by `data.json()` call
+    //   });
+      // fetch("/api/org/search", {
+      //   method: "POST",
+      //   body: formData
+      // }).then(response => response.json()).then(data => {
+      //   console.log(data)
+      // data.forEach(element => {
+      //   var option = document.createElement("option");
+      //   option.text = element.name;
+      //   option.value = element.name;
+      //   edValue.add(option);
+      // });
+      // });
+    // }
   </script>
 </head>
 
@@ -77,10 +107,10 @@
           <div class="bg1 relative p-2 px-4"><i class="fa-solid fa-envelope"></i></div>
           <input id="profile-email" type="email" placeholder="Email" class="pl-3 text-black">
         </div>
-        <div class=" flex border flex-row text-white text-2xl italic relative my-2">
+        <!-- <div class=" flex border flex-row text-white text-2xl italic relative my-2">
           <div class="bg1 relative p-2 px-4"><i class="fa-solid fa-envelope"></i></div>
           <input id="profile-org" type="text" placeholder="Organization" class="pl-3 text-black" onkeyup="arroz()">
-        </div>
+        </div> -->
         <!-- <div class=" flex border flex-row text-white text-2xl italic relative my-2">
                     <div class="bg1 relative p-2 px-4"><i class="fa-brands fa-facebook"></i></div>
                     <input id="profile-facebook" type="text" placeholder="Facebook" class="pl-3 text-black">

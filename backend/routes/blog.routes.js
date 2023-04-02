@@ -1,5 +1,5 @@
 const { authJwt } = require("../middleware");
-const controller = require("../controllers/post.controller");
+const controller = require("../controllers/blog.controller");
 
 // Initialize the multer middleware with the storage configuration
 const multer = require('multer');
@@ -25,5 +25,6 @@ module.exports = function(app) {
     next();
   });
 
-  app.post("/api/post/new", [authJwt.verifyToken, upload.single('file')], controller.newpost);
+  app.get("/api/blog/list", controller.list);
+  app.post("/api/blog/new", [authJwt.verifyToken, upload.single('file')], controller.new);
 };
