@@ -59,8 +59,12 @@
 
                 <div id="resolutions" class="hidden">
                 <h1 class="text-white font-bold text-2xl underline italic" style="margin-top: 40px;">Resoluções:</h1>
-                <button class="bg1 border p-3 rounded-lg hover:bg-white hover:text-black text-white" style="margin-top: 20px; margin-left: 20px;" id="toggleButton">Others</button>
-                <div id="<div id="answers1" class="answers">
+                <div class="flex flex-row items-center">
+                    <button class="bg1 border p-3 rounded-lg hover:bg-white hover:text-black text-white" style="margin-top: 20px; margin-left: 20px;" id="toggleButton">Others</button>
+                    <p class="text-white relative font-bold italic p-2 hidden" style="top: 10px; margin-left: 20px; font-size: 0.8em; color: grey; border: 1px solid grey; border-radius: 100px;" id="state">Others (non-students answers)</p>
+                </div>
+
+                <div id="answers1" class="answers">
                     <div class="post-title flex flex-row justify-start items-center w-full">
                         <img class="rounded-full w-10 h-10" src="../../test/imgs/Screenshot_20230316_114327.png" alt="profile pic">
                         <!-- id:action can be comment, post, etc -->
