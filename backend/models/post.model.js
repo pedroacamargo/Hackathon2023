@@ -11,6 +11,9 @@ module.exports = (sequelize, Sequelize) => {
     },
     commentIds: {
       type: Sequelize.ARRAY(Sequelize.INTEGER)
+    },
+    token: {
+      type: Sequelize.INTEGER
     }
     // date: {
     //   type: Sequelize.DATE
