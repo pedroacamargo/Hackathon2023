@@ -7,10 +7,10 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING
     },
     replyIds: {
-      type: Sequelize.ARRAY(Sequelize.INTEGER)
+      type: Sequelize.STRING
     },
     commentIds: {
-      type: Sequelize.ARRAY(Sequelize.INTEGER)
+      type: Sequelize.STRING
     },
     commentTime: {
       type: Sequelize.INTEGER

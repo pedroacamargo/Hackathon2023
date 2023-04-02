@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GitHub-like Navbar Test</title>
+    <script type="module" src="/static/src/navbar.js"></script>
     <style>
       .dropdown {
         min-width: 12rem;
@@ -160,11 +161,11 @@
               </div>
             </div>
 
-            <a text="New Post" href="/new-post" class="hidden lg:block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-              New Post
+            <a text="New Question" href="/new-question" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+              New Question
             </a>
 
-            <a text="New Post" href="/new-post" class="block lg:hidden bg-blue-500 hover:bg-blue-700 text-white text-2xl font-bold py-1 px-3 rounded-full">
+            <a text="New Question" href="/new-question" class="block lg:hidden bg-blue-500 hover:bg-blue-700 text-white text-2xl font-bold py-1 px-3 rounded-full">
               +
             </a>
 
@@ -172,7 +173,8 @@
             <!-- Profile dropdown -->
             <div class="relative">
               <img
-                src="../../test/imgs/Screenshot_20230316_114327.png"
+                id="profile-picture"
+                src="../uminho.png"
                 alt="Profile Picture"
                 class="w-10 h-10 rounded-full cursor-pointer dropdown-button text-white"
                 onclick="toggleDropdown('profile-dropdown', ['my-space-dropdown', 'stared-dropdown', 'notifications-dropdown'])"

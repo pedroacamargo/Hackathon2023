@@ -14,16 +14,14 @@
 
     <div id="navbar"></div>
 
-
     <div class="container flex justify-center" style="margin: auto;">
-        <form action="/api/post/new" method="post" enctype="multipart/form-data" style="padding-top: 100px; padding-left: 40px;">
+        <form action="/api/question/new" method="post" style="padding-top: 100px; padding-left: 40px;">
             <h1 class="text-white text-3xl italic font-bold text-center">Upload a question</h1>
             <div style="margin-left: 40px !important;">
                 <i class="fa-solid fa-filter text-white bg1 relative p-2" style="left: 56px; top: 8px; border-radius: 7px 0 0 7px;"></i>
-                <input type="text" placeholder="Name" class="m-5 p-1 rounded-lg" style="padding-left: 35px;">
+                <input type="text" name="name" placeholder="Name" class="m-5 p-1 rounded-lg" style="padding-left: 35px;">
                 <i class="fa-solid fa-question text-white bg1 relative p-2" style="left: 30px; top: 8px; border-radius: 7px 0 0 7px;"></i>
-                <input type="text" placeholder="Question" class="p-1 rounded-lg" style="padding-left: 35px;">
-                <input type="file" id="file-input" name="file" style="margin-left: 20px;"/>
+                <input type="text" name="question" placeholder="Question" class="p-1 rounded-lg" style="padding-left: 35px;">
             </div>
             <button class="submit-filter p-2 px-4 rounded-lg" type="submit" style="margin-left: 400px; background-color: aqua;">Upload</button>
         </form>

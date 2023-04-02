@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/static/styles/style.css">
     <link rel="stylesheet" href="/static/styles/colorPallete.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="/static/src/load-question.js"></script>
     <title></title>
 </head>
 <body class="bg1">
@@ -49,13 +50,15 @@
         </div>
         <div class="container" style="padding-top: 90px;">
             <div class="flex flex-row justify-center items-center">
-                <p class="text-white font-bold text-3xl italic p-5"><span>PI</span> - <span>Mini-Teste 4</span></p>
+                <p id="nome" class="text-white font-bold text-3xl italic p-5"></p>
             </div>
             <div class="p-5">
                 <h1 class="text-white font-bold text-2xl underline italic" style="margin-left: 10px;">Enunciado:</h1>
                 <div class="w-full bg3 text-white p-2" style="margin-top: 10px;">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, sapiente obcaecati pariatur debitis consequatur nihil dolorem ducimus. Velit ullam excepturi laudantium inventore, iure magni nihil architecto maxime consequatur praesentium ratione.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, labore consectetur voluptatum itaque ut iste! Nisi vel eligendi adipisci voluptate cumque soluta, molestias harum voluptates reprehenderit, inventore repellat similique tempora?</div> <!-- O height é só para debug para fazer a solução pro Davide rápido -->
+                <p id="enunciado" class="text-white text-justify w-full h-32 bg3" style="margin-left: 10px;"></p>
+                <!-- <div class="w-full h-32 bg3" style="margin-top: 10px;"></div> O height é só para debug para fazer a solução pro Davide rápido -->
 
                 <button class="bg1 border p-3 rounded-lg hover:bg-white hover:text-black text-white" style="margin-top: 20px; margin-left: 20px;" onclick="document.getElementById('resolutions').classList.remove('hidden')">Show resolutions</button>
 
@@ -194,7 +197,7 @@
         </div>
     </div>
 
-
+    
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"

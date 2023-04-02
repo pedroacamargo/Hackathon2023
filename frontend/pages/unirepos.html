@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="static/styles/style.css">
     <link rel="stylesheet" href="static/styles/colorPallete.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="/static/src/unirepos.js"></script>
     <title></title>
 </head>
 <body class="bg1">
@@ -35,8 +36,12 @@
                     <input class="submit-filter p-2 rounded-lg text-black cursor-pointer" type="submit" value="Filter" style="background-color: cyan;margin-left: 250px; border: 1px solid black;">
                 </div>
             </form>
+
+            <ul id="question_list" class="w-full">
+
+            </ul>
             
-            <div class="w-1/2 relative cursor-pointer" onclick="window.location.href = '/repo'">
+            <!-- <div class="w-1/2 relative cursor-pointer" onclick="window.location.href = '/repo'">
                 <div class="w-full bg3 p-5 flex flex-col justify-center">
                     <div class="flex items-center">
                         <i class="fa-solid fa-book-open text-white text-3xl"></i>
@@ -90,7 +95,7 @@
                     <p class="text-white font-bold hover:text-black cursor-pointer"><span id="resolutions-amount">2</span> Resolutions</p>
                 </div>
                 <div class="divider absolute z-50" style="width: 90%;height: 1px; background-color: rgba(221, 217, 217, 0.185); left: 5%;"></div>
-            </div>
+            </div> -->
         </div>
     </div>
 

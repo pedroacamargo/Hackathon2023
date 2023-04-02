@@ -6,12 +6,6 @@ module.exports = (sequelize, Sequelize) => {
     message: {
       type: Sequelize.STRING
     },
-    filename: {
-      type: Sequelize.STRING
-    },
-    commentIds: {
-      type: Sequelize.ARRAY(Sequelize.INTEGER)
-    },
     token: {
       type: Sequelize.INTEGER
     }
