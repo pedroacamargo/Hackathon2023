@@ -26,9 +26,9 @@
     cursor: pointer;
 }
 
-.feed-active {
-    border: 2px solid white;
-    background-color: var(--cor6);
+.feed-active {    
+    background-color: white !important;
+    color: black !important;
 }
 
 .feed-container {
@@ -41,7 +41,7 @@
 }
 
 .top {
-    color: green;
+    color: orange;
     font-weight: bold;
 }
 
@@ -50,6 +50,27 @@
     font-weight: bold;
 }
 
+.move {
+    left: 400px !important;
+}
+
+ul {
+    cursor: pointer;
+}
+
+li {
+    margin-left: 1em; /* add left margin to the list item */
+    cursor: pointer;
+}
+
+/* nested unordered list */
+ul ul {
+    margin-left: 1em; /* add left margin to the nested unordered list */
+}
+
+.active-file {
+    color: greenyellow;
+}
 
 @media screen and (max-width: 768px) {
     .rectangle {

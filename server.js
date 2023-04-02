@@ -67,6 +67,10 @@ app.get('/edit-profile', (req, res) => {
   res.sendFile(path.resolve("frontend", "pages", "edit-profile.html"));
 });
 
+app.get('/repo', (req, res) => {
+  res.sendFile(path.resolve("frontend", "pages", "repo.html"));
+});
+
 // // Display the uploaded files in a StackOverflow/Reddit-like way
 // app.get('/files', (req, res) => {
 //   res.render('files', { files: uploadedFiles });

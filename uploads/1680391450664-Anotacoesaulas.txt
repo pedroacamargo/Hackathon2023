@@ -1,0 +1,2 @@
+gcc -Wall -Wextra -pedantic -02 a.c -lm
+ver o que é od -c inp
