@@ -14,6 +14,7 @@ exports.signup = async (req, res) => {
     const user = await User.create({
       username: req.body.username,
       email: req.body.email,
+      profile_filename: "default_avatar.png",
       password: bcrypt.hashSync(req.body.password, 8),
     });
 
