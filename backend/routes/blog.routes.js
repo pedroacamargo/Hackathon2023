@@ -26,5 +26,5 @@ module.exports = function(app) {
   });
 
   app.get("/api/blog/list", controller.list);
-  app.post("/api/blog/new", [authJwt.verifyToken, upload.single('file')], controller.new);
+  app.post("/api/blog/new", [authJwt.verifyToken, upload.single('file')], controller.newpost);
 };

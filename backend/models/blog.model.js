@@ -6,7 +6,7 @@ module.exports = (sequelize, Sequelize) => {
     name: {
       type: Sequelize.STRING
     },
-    statementFilename: {
+    statement: {
       type: Sequelize.STRING
     },
     posts: {

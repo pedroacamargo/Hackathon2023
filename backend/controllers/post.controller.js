@@ -9,6 +9,7 @@ exports.newpost = async (req, res) => {
 
 //   res.status(200).json({ message: 'File uploaded successfully.', filename: req.file.filename });
 
+  console.log(req.body.message);
   // Save Post to Database
   try {
     const post = await Post.create({

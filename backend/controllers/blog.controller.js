@@ -1,32 +1,28 @@
-const { Sequelize } = require("../models");
 const db = require("../models");
 const Blog = db.blog;
+const multer = require('multer');
 
 exports.list = async (req, res) => {
-  try {
-    Blog.findAll().then(function (user) {
-      res.send(user);
-    });
-  } catch (error) {
-    return res.status(500).send({
-      message: "Unable to find user!",
-    });
-  }
-};
+  Blog.findAll().then(blogs => {
+    res.status(200).send(blogs);
+  });
+}
 
-exports.new = async (req, res) => {
+exports.newpost = async (req, res) => {
   if (!req.file) {
     return res.status(400).json({ message: 'No file was provided.' });
   }
 
-  //   res.status(200).json({ message: 'File uploaded successfully.', filename: req.file.filename });
+//   res.status(200).json({ message: 'File uploaded successfully.', filename: req.file.filename });
 
+  console.log(req.body.message);
   // Save Post to Database
   try {
-    const blog = await Blog.create({
+    const post = await Blog.create({
       userId: req.userId,
       name: req.body.name,
-      statementFilename: req.file.filename,
+      statement: req.body.message,
+      filename: req.file.filename,
       posts: "[]"
     });
 

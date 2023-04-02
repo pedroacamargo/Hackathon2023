@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/static/styles/style.css">
     <link rel="stylesheet" href="/static/styles/colorPallete.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="/static/src/load-blog.js"></script>
     <title></title>
 </head>
 <body class="bg1">
@@ -49,11 +50,12 @@
         </div>
         <div class="container" style="padding-top: 90px;">
             <div class="flex flex-row justify-center items-center">
-                <p class="text-white font-bold text-3xl italic p-5"><span>PI</span> - <span>Mini-Teste 4</span></p>
+                <p id="nome" class="text-white font-bold text-3xl italic p-5"></p>
             </div>
             <div class="p-5">
                 <h1 class="text-white font-bold text-2xl underline italic" style="margin-left: 10px;">Enunciado:</h1>
-                <div class="w-full h-32 bg3" style="margin-top: 10px;"></div> <!-- O height é só para debug para fazer a solução pro Davide rápido -->
+                <p id="enunciado" class="text-white text-justify w-full h-32 bg3" style="margin-left: 10px;"></p>
+                <!-- <div class="w-full h-32 bg3" style="margin-top: 10px;"></div> O height é só para debug para fazer a solução pro Davide rápido -->
 
                 <h1 class="text-white font-bold text-2xl underline italic" style="margin-top: 40px;">Resoluções:</h1>
                 <div>
